@@ -1,13 +1,27 @@
-# hello-world
-This is my first github repository. i will try to make this my default folder for my proyects
-ima destroy you ma' nigga, o man, so racist!
+# El juego de la vida (Leng: Smalltalk)
+El juego de la vida es un autómata celular, es decir una rejilla en dos dimensiones cuyas celdas
+están ocupadas por lo que se denominan autómatas finitos, se trata de un objeto que se encuentra
+en uno de entre un conjunto de estados posibles finito. Su actualización, es decir el cálculo de cuál
+será su estado en el tiempo siguiente (t+1) utiliza un conjunto de reglas que se conocen como reglas
+de transición, que serán las que actualizarán el estado de cada autómata finito teniendo en cuenta
+tanto su estado actual como los estados de los autómatas vecinos que se encuentran a su alrededor.
+En este caso, cada autómata finito tiene 8 vecinos, los situados a su alrededor. Además se asume
+que los autómatas tienen solo dos estados posibles, el estado 0 (muerto) o 1 (vivo). El juego actualiza
+el estado de los autómatas finitos aplicando la siguientes reglas:
 
-Buscar el archivo "my.init" en la computadora (deberia estar en la carpeta donde esta instalado MySQL server), aunque yo lo busqué en C nomas
-editar ese archivo y buscar esta linea "default_authentication_plugin"
-editarla para que quede asi "default_authentication_plugin=mysql_native_password"
-guardar y ejecutar la base de datos para que se guarde los cambios, si tenes un error, ni puta idea 
-https://stackoverflow.com/questions/49194719/authentication-plugin-caching-sha2-password-cannot-be-loaded ahi esta la solucion que use, en uno de los renglones, tiene un OR grande en el medio
+- Regla 1: sea el estado de un autómata finito 𝑎𝑖𝑗igual a 0 o 1. Su estado futuro será idéntico al anterior
+si el número de vecinos en estado 1 es igual a 2.
+- Regla 2: el estado de un autómata finito 𝑎𝑖𝑗pasará al estado 1 en el tiempo 𝑡 + 1 si el número de
+vecinos en estado 1 es igual a 3. Este cambio sólo tendrá lugar si su estado era 0 en el tiempo 𝑡.
+- Regla 3: sea el estado de un autómata finito 𝑎𝑖𝑗morirá (pasará al estado 0) en el tiempo 𝑡 + 1 si el
+número de vecinos en estado 1 es inferior a 2 o superior a 3. Este cambio sólo tendrá lugar si su
+estado era 1 en el tiempo 𝑡.
+Aplicar reiteradas veces las reglas de transición a cada uno de los autómatas finitos que componen
+el autómata celular permitiendo parametrizar las dimensiones de la grilla donde se ubicarán los
+autómatas finitos y la cantidad de generaciones de evolución.
 
-Si te abrio bien el MySQL server, deberias de ejecutar el python manage.py runserver deberia estar todo bien
+Proponga una variación al modelo enunciado.
 
-PUEDE FALLAR
+## Variaciones propuestas por el alumno 
+Se podrian agregar condiciones adicionales para que muera, o viva.
+Estados adicionales: quizas atributos extras a cada celula, como canibalismo, altruismo, clanes, comida?
